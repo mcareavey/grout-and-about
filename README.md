@@ -1,23 +1,22 @@
-# Seven Seas Spa
+# Grout & About
 
-A responsive static website for a wellness and spa brand, built with HTML, Bootstrap, and custom CSS. The site presents the spa's offerings, wellness philosophy, and contact information through a polished landing page and supporting pages.
+A three-page static website for a plumbing brand, built with HTML, Bootstrap, and custom CSS. The project is designed to present a clean, trustworthy, and professional service offering for homeowners and property managers looking for reliable plumbing support.
 
 ## Overview
 
-Seven Seas Spa is designed to feel calm, modern, and welcoming. The project includes:
+Grout & About focuses on plumbing services, repair expertise, and customer confidence. The site includes:
 
-- A home page with hero content and service highlights
-- About, Services, and Contact pages
-- Responsive layouts for desktop and mobile devices
-- Bootstrap-based styling with custom typography and color accents
-- Wellness-focused branding and marketing copy
+- A home page with a strong service message and call-to-action
+- A services page outlining key plumbing solutions
+- A contact page with enquiry details and business information
+- Responsive layouts for desktop and mobile screens
+- Modern, practical branding with a clean visual identity
 
 ## Project structure
 
 ```text
 .
 ├── index.html
-├── about.html
 ├── services.html
 ├── contact.html
 ├── assets/
@@ -40,7 +39,7 @@ Seven Seas Spa is designed to feel calm, modern, and welcoming. The project incl
 
 1. Clone or download the project.
 2. Open the project folder in your browser.
-3. Launch `index.html` directly, or serve the folder with a local static server if preferred.
+3. Launch `index.html` directly, or run a local static server.
 
 Example using Python:
 
@@ -52,19 +51,18 @@ Then visit `http://localhost:8000` in your browser.
 
 ## Pages
 
-- `index.html` — homepage and primary marketing page
-- `about.html` — spa story, values, and mission
-- `services.html` — wellness services and treatment packages
-- `contact.html` — contact form and business details
+- `index.html` — homepage introducing the brand and key services
+- `services.html` — plumbing services, fixes, and value proposition
+- `contact.html` — contact details and customer enquiry section
 
 ## Customization
 
 You can update the following content easily:
 
-- Branding text and page titles in each HTML file
-- Hero text and section descriptions
-- Service offerings and wellness tips
-- Contact details and form copy
+- Brand name, tagline, and page titles
+- Service descriptions and pricing or package details
+- Contact number, email address, and business hours
+- Hero text and call-to-action messaging
 - Colors, spacing, and typography in `assets/css/styles.css`
 
 ## Notes
