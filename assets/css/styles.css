@@ -1,0 +1,96 @@
+/* Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fredoka:wght@300..700&display=swap");
+
+/* CSS Variables */
+:root {
+  --lilac: #c8b6f0;
+  --lilac-tint: #efe8fd;
+  --violet: #6a4bc4;
+  --plum: #2b1840;
+  --cream: #fff9f0;
+  --marigold: #ffc845;
+  --mint: #5fd3be;
+  --mint-tint: #dff6f1;
+  --white: #ffffff;
+
+  --bs-body-font-family: "DM Sans", sans-serif;
+  --bs-body-color: var(--plum);
+  --bs-body-bg: var(--cream);
+  --bs-link-color-rgb: 106, 75, 196; /* violet links */
+}
+
+/* Global Styling */
+
+h1,
+h2,
+h3,
+h4,
+.brand {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* Button Styling */
+
+.btn-pill {
+  border: 2px solid var(--plum);
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  color: var(--plum);
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.btn-gold {
+  background: var(--marigold);
+}
+.btn-tint {
+  background: var(--lilac-tint);
+}
+.btn-cream {
+  background: var(--cream);
+}
+
+/* Hover: lift onto a plum shadow; press: drop back down */
+.btn-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 0 var(--plum);
+}
+.btn-pill:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Hover fills: each colour deepens one step */
+.btn-gold:hover {
+  background: #ffb912;
+} /* deeper marigold */
+.btn-tint:hover {
+  background: var(--lilac);
+}
+.btn-cream:hover {
+  background: var(--lilac-tint);
+}
+
+/* Reduce motion setting: no lift or animation, colour change only */
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill {
+    transition: none;
+  }
+  .btn-pill:hover {
+    transform: none;
+  }
+}
+
+/* Navbar Styling */
+
+/* Index Page Styling */
+
+/* Index Page - Hero Section */
