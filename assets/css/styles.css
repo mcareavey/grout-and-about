@@ -2,25 +2,35 @@
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fredoka:wght@300..700&display=swap");
 
-/* CSS Variables */
+/* ###### CSS Variables ####################################################### */
+
+/* Custom Variables */
 :root {
   --lilac: #c8b6f0;
   --lilac-tint: #efe8fd;
   --violet: #6a4bc4;
   --plum: #2b1840;
+  --plum-line: #4a3463;
   --cream: #fff9f0;
   --marigold: #ffc845;
+  --marigold-deep: #ffb912;
   --mint: #5fd3be;
   --mint-tint: #dff6f1;
   --white: #ffffff;
 
+  /* Bootstrap Variables */
   --bs-body-font-family: "DM Sans", sans-serif;
+  --bs-body-font-size: 1.0625rem; /* 17px */
+  --bs-body-line-height: 1.6;
   --bs-body-color: var(--plum);
   --bs-body-bg: var(--cream);
-  --bs-link-color-rgb: 106, 75, 196; /* violet links */
+  --bs-link-color-rgb: 106, 75, 196; /* violet */
+  --bs-link-hover-color-rgb: 43, 24, 64; /* plum */
 }
 
-/* Global Styling */
+/* ##### Global Styling ##################################################### */
+
+/* Body Styling */
 
 h1,
 h2,
@@ -30,36 +40,57 @@ h4,
   font-family: "Fredoka", sans-serif;
   font-weight: 600;
   line-height: 1.1;
+  color: var(--plum);
+}
+h1 {
+  font-size: 3.375rem;
+} /* 54px */
+h2 {
+  font-size: 2.75rem;
+} /* 44px */
+h3 {
+  font-size: 1.75rem;
+} /* 28px */
+h4 {
+  font-size: 1.5rem;
+} /* 24px */
+
+/* Page width: 1152px of content plus 24px padding at each side */
+.container {
+  max-width: 1200px;
+  --bs-gutter-x: 3rem;
 }
 
-/* Button Styling */
+/* ### Button Styling ##################################################### */
 
+/* Pill buttons */
 .btn-pill {
+  display: inline-block;
   border: 2px solid var(--plum);
   border-radius: 999px;
   padding: 0.75rem 1.75rem;
   font-weight: 700;
   color: var(--plum);
+  text-align: center;
   text-decoration: none;
-  display: inline-block;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
     background-color 0.25s ease;
 }
-
 .btn-gold {
-  background: var(--marigold);
+  background-color: var(--marigold);
 }
 .btn-tint {
-  background: var(--lilac-tint);
+  background-color: var(--lilac-tint);
 }
 .btn-cream {
-  background: var(--cream);
+  background-color: var(--cream);
 }
 
 /* Hover: lift onto a plum shadow; press: drop back down */
 .btn-pill:hover {
+  color: var(--plum);
   transform: translateY(-2px);
   box-shadow: 0 3px 0 var(--plum);
 }
@@ -70,16 +101,276 @@ h4,
 
 /* Hover fills: each colour deepens one step */
 .btn-gold:hover {
-  background: #ffb912;
-} /* deeper marigold */
+  background-color: var(--marigold-deep);
+}
 .btn-tint:hover {
-  background: var(--lilac);
+  background-color: var(--lilac);
 }
 .btn-cream:hover {
-  background: var(--lilac-tint);
+  background-color: var(--lilac-tint);
 }
 
-/* Reduce motion setting: no lift or animation, colour change only */
+/* Keyboard focus: a violet outline that is retained when tabbing */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+}
+
+/* ##### Header & Footer Styling ############################################# */
+
+/* Header Styling */
+.site-header {
+  background-color: var(--plum);
+}
+.site-header .navbar {
+  padding: 15px 0;
+}
+.site-header .navbar-brand {
+  color: var(--cream);
+  font-size: 1.75rem; /* 28px */
+  gap: 10px;
+}
+
+/* Logo: the plum drop on a lilac tile */
+.brand-tile {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lilac);
+  border-radius: 12px;
+}
+.amp {
+  color: var(--lilac);
+}
+
+/* Page links: cream, with an underline that stays hidden until hover */
+.site-header .nav-link {
+  color: var(--cream);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.25s ease;
+}
+.site-header .nav-link:hover {
+  text-decoration-color: var(--lilac);
+}
+
+/* Current page: marigold underline, which stays marigold on hover */
+.site-header .nav-link[aria-current="page"] {
+  font-weight: 700;
+  text-decoration-color: var(--marigold);
+}
+
+/* Burger: plum lines on a lilac tile */
+.site-header .burger {
+  background-color: var(--lilac);
+  color: var(--plum);
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 0.6rem;
+}
+.site-header .burger svg {
+  display: block;
+}
+.site-header .burger:focus {
+  box-shadow: none;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--plum);
+  color: var(--cream);
+  padding-top: 56px;
+}
+.footer-brand {
+  color: var(--cream);
+  font-size: 1.75rem;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.footer-tagline {
+  color: var(--lilac-tint);
+  margin: 0;
+}
+.footer-heading {
+  font-size: 1.25rem;
+  color: var(--lilac);
+  margin-bottom: 12px;
+}
+.footer-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.site-footer a {
+  color: var(--marigold);
+  text-underline-offset: 4px;
+}
+.site-footer a:hover {
+  color: var(--cream);
+  text-decoration-color: var(--lilac);
+}
+.footer-base {
+  border-top: 1px solid var(--plum-line);
+  margin-top: 40px;
+}
+.footer-base p {
+  margin: 0;
+  padding: 18px 0;
+  font-size: 0.875rem;
+  color: var(--lilac);
+}
+
+/* Keyboard focus on plum: marigold, because violet disappears on plum */
+.site-header a:focus-visible,
+.site-header button:focus-visible,
+.site-footer a:focus-visible {
+  outline: 3px solid var(--marigold);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+/* ##### Index Page - Hero Section ####################################### */
+
+/* Hero styling */
+
+/* Make the wave for the hero section */
+.hero {
+  background-color: var(--lilac);
+  padding-bottom: 48px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - 47px) no-repeat,
+    url("../images/wave.svg") bottom / 100% 48px no-repeat;
+  mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - 47px) no-repeat,
+    url("../images/wave.svg") bottom / 100% 48px no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make the icon layer */
+.float-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.float-layer img {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  transform: rotate(var(--r, 0deg));
+  animation: bob 7s ease-in-out infinite alternate;
+}
+
+/* Animate each icon with a different speed and start time */
+
+.float-layer img:nth-child(3n) {
+  animation-duration: 9s;
+  animation-delay: -3s;
+}
+.float-layer img:nth-child(4n + 1) {
+  animation-duration: 11s;
+  animation-delay: -5s;
+}
+
+/* Make icons bob */
+@keyframes bob {
+  from {
+    transform: translateY(-7px) rotate(calc(var(--r, 0deg) - 6deg));
+  }
+  to {
+    transform: translate(4px, 7px) rotate(calc(var(--r, 0deg) + 6deg));
+  }
+}
+
+/* Putting hero inner on top of the icons */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 56px;
+  padding-bottom: 92px;
+}
+
+/* Style hero card */
+.hero-card {
+  background-color: rgba(255, 249, 240, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 2px solid var(--plum);
+  border-radius: 28px;
+  padding: 36px 40px;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* Style hero card items: chip, intro etc. */
+.hero-card .chip {
+  margin: 0;
+  background-color: var(--lilac);
+  border: 2px solid var(--plum);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.25rem 1rem;
+}
+
+.hero-card .hero-intro {
+  margin: 0;
+  font-size: 1.125rem;
+  max-width: 62ch;
+}
+
+.hero-card h1 {
+  margin: 0;
+}
+
+.hero-card .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tick-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tick-list li {
+  padding-left: 28px;
+  background: url("../images/ui/tick.svg") left 0.2em / 18px no-repeat;
+}
+
+.tick-list-inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-weight: 500;
+}
+
+.tick-list-inline li {
+  background: url("../images/ui/tick-violet.svg") left 0.2em / 18px no-repeat;
+}
+
+/* ##### Media Queries ##################################################### */
+
+/* Accessibility - Reduce motion setting: no lift or animation, colour change only */
 @media (prefers-reduced-motion: reduce) {
   .btn-pill {
     transition: none;
@@ -87,10 +378,97 @@ h4,
   .btn-pill:hover {
     transform: none;
   }
+  .float-layer img {
+    animation: none;
+  }
 }
 
-/* Navbar Styling */
+/* Devices up to 992px */
 
-/* Index Page Styling */
+@media (max-width: 991.98px) {
+  /* 48px on tablets */
+  h1 {
+    font-size: 3rem;
+  }
+  /* Gap between nav items */
+  .site-header .navbar-nav {
+    gap: 8px;
+  }
+  /* Open menu: links are roomy with thin lines between */
+  .site-header .navbar-nav {
+    padding-top: 8px;
+  }
+  .site-header .nav-link {
+    padding: 14px 0;
+  }
+  .site-header .nav-item + .nav-item {
+    border-top: 1px solid var(--plum-line);
+  }
+  /* Smaller icons for float layer background */
+  .float-layer img {
+    width: 60px;
+    height: 60px;
+  }
+}
 
-/* Index Page - Hero Section */
+/* Devices up to 576px */
+
+@media (max-width: 575.98px) {
+  /* Heading size changes */
+  h1 {
+    font-size: 2.125rem;
+  } /* 34px on phones */
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  /* Header changes: shrink the name, logo and button so the header fits on one line */
+  .site-header .navbar-brand {
+    font-size: 1.125rem;
+    margin-right: 0;
+    gap: 6px;
+  }
+  .site-header .brand-tile {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+  }
+  .site-header .brand-tile img {
+    width: 16px;
+    height: 16px;
+  }
+  .site-header .btn-pill {
+    padding: 0.4375rem 0.875rem;
+    font-size: 0.9375rem;
+  }
+  .site-header .burger {
+    padding: 0.4375rem 0.5rem;
+  }
+  /* Smaller icons for float layer background */
+  .float-layer img {
+    width: 52px;
+    height: 52px;
+  }
+  /* Amend hero-inner spacing */
+  .hero-inner {
+    padding-top: 32px;
+    padding-bottom: 84px;
+  }
+  .hero-card {
+    padding: 20px 18px;
+    gap: 14px;
+  }
+  .hero-card .hero-intro {
+    font-size: 1.0625rem;
+  }
+  /* Amend hero-action width */
+  .hero-actions {
+    width: 100%;
+  }
+  /* Button amendments */
+  .hero-actions .btn-pill {
+    flex: 1 1 auto;
+  }
+}
