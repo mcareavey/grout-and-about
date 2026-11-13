@@ -457,6 +457,12 @@ button:focus-visible {
 .tile-cream {
   background-color: var(--cream);
 }
+
+.tile-lilac {
+  background-color: var(--lilac);
+}
+
+/* Service group styling */
 .svc-group {
   --bs-card-bg: var(--lilac);
   --bs-card-border-radius: 28px;
@@ -473,6 +479,68 @@ button:focus-visible {
   margin-bottom: 18px;
 }
 
+/* Service card details */
+.svc-card {
+  gap: 12px;
+}
+
+.svc-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.svc-head h4 {
+  margin: 0;
+}
+
+.svc-desc {
+  margin: 0;
+}
+
+.svc-link {
+  font-weight: 700;
+}
+
+/* Card styling - toggle button */
+.included-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1.5px solid var(--lilac);
+  padding: 10px 0 0;
+  font-weight: 700;
+  color: var(--plum);
+  text-align: left;
+}
+
+.included-toggle:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--lilac);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.included-toggle .chev {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.included-toggle:not(.collapsed) .chev {
+  transform: rotate(180deg);
+}
+
+.svc-card .tick-list {
+  padding-top: 12px;
+  gap: 6px;
+  font-size: 1rem;
+}
+
 /* ##### Media Queries ##################################################### */
 
 /* Accessibility - Reduce motion setting: no lift or animation, colour change only */
@@ -485,6 +553,37 @@ button:focus-visible {
   }
   .float-layer img {
     animation: none;
+  }
+}
+
+/* 768–809px: two across, Common repairs wraps to 3 lines */
+@media (min-width: 768px) and (max-width: 809.98px) {
+  .svc-desc {
+    min-height: 3lh;
+  }
+}
+
+/* 810–991px: two across, longest wraps to 2 lines */
+@media (min-width: 810px) and (max-width: 991.98px) {
+  .svc-desc {
+    min-height: 2lh;
+  }
+}
+
+/* 992px and up: three across, longest wraps to 3 lines */
+@media (min-width: 992px) {
+  .svc-desc {
+    min-height: 3lh;
+  }
+  .svc-head {
+    min-height: 3.3rem; /* two lines of a 24px title at line-height 1.1 */
+  }
+}
+
+/* 768–991px: Third card of the service cards has its own row, so nothing to line up with */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .svc-desc.third-card {
+    min-height: 0;
   }
 }
 
