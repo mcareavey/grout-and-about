@@ -408,6 +408,71 @@ button:focus-visible {
   --bs-card-cap-padding-y: 14px;
 }
 
+.icon-tile {
+  height: 48px;
+  width: 48px;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--plum);
+  border-radius: 14px;
+}
+
+/* Icon styling */
+.icon-tile img {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-tile-md {
+  width: 52px;
+  height: 52px;
+}
+.icon-tile-md img {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-tile-lg {
+  width: 88px;
+  height: 88px;
+  border-radius: 26px;
+}
+.icon-tile-lg img {
+  width: 52px;
+  height: 52px;
+}
+
+/* Tile colour schemes */
+.tile-mint {
+  background-color: var(--mint);
+}
+.tile-white {
+  background-color: var(--white);
+}
+.tile-gold {
+  background-color: var(--marigold);
+}
+.tile-cream {
+  background-color: var(--cream);
+}
+.svc-group {
+  --bs-card-bg: var(--lilac);
+  --bs-card-border-radius: 28px;
+  --bs-card-spacer-x: 28px;
+  --bs-card-spacer-y: 28px;
+  margin-bottom: 36px;
+}
+
+.svc-group-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2.125rem; /* 34px */
+  margin-bottom: 18px;
+}
+
 /* ##### Media Queries ##################################################### */
 
 /* Accessibility - Reduce motion setting: no lift or animation, colour change only */
